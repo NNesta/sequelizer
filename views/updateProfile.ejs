@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Profile</title>
+   
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+  </head>
+<body>
+<div class="container">
+<div class="data-of-user">
+  <span><%= email %></span>  
+  
+    <img src="<%=pic%>" width="100" height="100" alt="">
+        <button id="logoutBtn"> Logout</button>
+    
+</div>
+
+        <!-- GOOGLE INFORMATION -->
+                
+                   
+                        
+                   
+                
+                    <div class="change-profile">
+                        <span>Hello <span> <%= name %></span>  </span>
+                        
+                    <h3 class="text-danger">Create your profile</h3>
+                    
+                    
+                    <form id="form-profile" action="." role="form"
+                    enctype="text/plain" method="post">
+
+                        <div class="comp">
+                            <label for="" >age</label>
+                            <input name="age" type="text">
+                        </div>
+                       
+                            
+                            
+                        
+                        <div class="comp">
+                            <label for="" >gender</label>
+                            
+                            <input name="gender" type="text">
+                        </div>
+                        <div class="comp">
+                            <label for="">address</label>
+                            <input name="address" type="text">
+                        </div>
+                        <div class="comp">
+                            <label for="" >education</label>
+                            <input name="education" type="text">
+                        </div>
+                        <div class="comp">
+                            <label for="" >martal status</label>
+                            <input name="martal_status" type="text">
+                        </div>
+                        <div class="comp">
+                            <label for="" >Nationality</label>
+                            <input name="nationality" type="text">
+                        </div>
+                        <div class="comp">
+                            <label for="">phone</label>
+                            <input name="phone" type="text">
+                        </div>
+                        <input id="user__id" type="text" value="<%= user__id %>" >
+                        <input class="submit-profile" type="submit" value="Submit">
+                    </form>
+                </div>
+
+            
+        
+
+    
+
+</div>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

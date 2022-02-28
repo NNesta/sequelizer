@@ -1,0 +1,85 @@
+
+  main {
+    margin: 0rem 0.5rem;
+    
+  }
+  :root {
+    font-size: 18px;
+    --letter-color: black;
+    --primary-color: #000080;
+    --succes-color: green;
+    --fail-color: rgb(180, 6, 6);
+    --backround-color: #f2f2f2;
+  }
+  body {
+    background-color: var(--backround-color);
+
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .container {
+    margin: 1rem;
+  }
+  input {
+    border-radius: 1rem;
+    border-color: black;
+    margin-right: auto;
+  }
+  
+  .comp {
+    margin: .5rem;
+ 
+  }
+  .change-profile {
+    margin: 1rem 25rem;
+  }
+  .change-profile span{
+margin-left: 0rem;
+font-weight: bold;
+font-size: 1.2rem;
+  }
+  .change-profile h3{
+margin-left: 2rem;
+font-weight: bold;
+font-size: 1.2rem;
+  }
+  .change-profile span span{
+color: blue;
+margin-left: 0rem;
+  }
+  .text-danger {
+    margin-left: 7rem;
+    margin-bottom: 2rem;
+
+  }
+  label {
+    width: 7rem;
+    display: inline-block;
+    text-align: right;
+    margin-right: 2rem;
+   
+  }
+  img {
+    border-radius: 50%;
+    margin-right: 13rem;
+  }
+  button {
+    background: rgb(184, 18, 18);
+    border-radius: 1rem;
+    height: 2rem;
+    font-size: 1rem;
+    border: none;
+  }
+  .data-of-user {
+    display: flex;
+    place-content: space-between;
+  }
+ .submit-profile {
+   width: 24rem;
+   height: 1.5rem;
+   background: blue;
+   color: white;
+ }
+ #user__id{
+   visibility: hidden;
+ }
