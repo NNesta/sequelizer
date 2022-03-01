@@ -83,3 +83,12 @@ margin-left: 0rem;
  #user__id{
    visibility: hidden;
  }
+ .info{
+  margin: 1rem 15rem;
+ }
+ .key{
+   margin: .2rem 5rem;
+ }
+ .value{
+   margin: .2rem 5rem;
+ }

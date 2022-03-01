@@ -39,21 +39,27 @@ const isLoggedIn = (req, res, next) => {
   }
 };
 app.get("/", (req, res) => res.render("index"));
+app.get("/dashboard",isLoggedIn, controllers.createUser, (req, res) => res.render("dashboard", {
+  name: req.user.displayName,
+  pic: req.user.photos[0].value,
+  email: req.user.emails[0].value,
+  user__id: req.user.user__id,
+  profile: req.user.profile1
+
+}));
+app.get("/create",isLoggedIn, controllers.createUser, (req, res) => res.render("createProfile", {
+  name: req.user.displayName,
+  pic: req.user.photos[0].value,
+  email: req.user.emails[0].value,
+  user__id: req.user.user__id
+}))
+app.get("/update",isLoggedIn, controllers.createUser, (req, res) => res.render("updateProfile", {
+  name: req.user.displayName,
+  pic: req.user.photos[0].value,
+  email: req.user.emails[0].value,
+  user__id: req.user.user__id
+}))
 app.get("/fail", (req, res) => res.send("You Failed to log in!"));
-
-app.get("/success", isLoggedIn, controllers.createUser, (req, res) => {
-  res.render("profile", {
-    name: req.user.displayName,
-    pic: req.user.photos[0].value,
-    email: req.user.emails[0].value,
-    user__id: req.user.user__id
-  });
-});
-// app.get('/good', (req, res) =>{res.render("profile",{name:"Nestor",pic:"Nice pic",email:"ngabonest@gmail.com"})})
-
-// app.get('/good', isLoggedIn, (req, res) =>{
-//     res.render("profile",{name:req.user.displayName,pic:req.user.photos[0].value,email:req.user.emails[0].value})
-// })
 app.get(
   "/login",
   passport.authenticate("google", { scope: ["profile", "email"] })
@@ -62,9 +68,12 @@ app.get(
 app.get(
   "/google/callback",
   passport.authenticate("google", { failureRedirect: "/fail" }),
-  function (req, res) {
-    // Successful authentication, redirect home.
-    res.redirect("/success");
+  (req, res)=> {
+    if(req.user.isNew)
+    res.redirect("/create");
+    else{
+      res.redirect("/dashboard");
+    }
   }
 );
 

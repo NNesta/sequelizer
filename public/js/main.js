@@ -1,4 +1,9 @@
 const profileForm = document.getElementById("form-profile");
+const logoutBtn = document.getElementById("logoutBtn");
+
+logoutBtn.addEventListener("click", () =>{
+ window.location.href = "/logout";
+})
 
 
 profileForm.addEventListener("submit", (e) => {
@@ -28,7 +33,7 @@ profileForm.addEventListener("submit", (e) => {
       body: JSON.stringify(profile),
     });
    if(response.status == 200){
-     window.location.href = ".";
+     window.location.href = "/dashboard.ejs";
    }
   };
   

@@ -22,10 +22,15 @@ const createUser = async (req, res,next) => {
     if(userExist){
       console.log("already exist");
      req.user.user__id = userExist.id;
+     req.user.profile1 = userExist.profile? userExist.profile.dataValues: null;
+     console.log(req.user.profile1)
+     req.user.isNew = false;
       return next()
     }
     const newUser = await models.User.create(obj);
     req.user.user__id = newUser.id;
+    req.user.profile = null;
+    req.user.isNew = true;
     return next();
   } catch (error) {
     return res.status(500).json({ error: error.message });
@@ -97,8 +102,6 @@ const deleteUser = async (req, res) => {
 };
 // PROFILE
 const createProfile = async (req, res) => {
-  console.log("Hello there")
-  console.log(req.body)
   try {
     const profile = await models.Profile.create(req.body);
     return res.status(201).json(profile);
