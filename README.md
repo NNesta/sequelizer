@@ -1,2 +1,2 @@
 # sequelizer
-sequlize the database using postgres and express and using the ejs views
+sequlize the database using postgres and express and using the ejs views for frontend
