@@ -47,4 +47,4 @@ module.exports = db;
 //  SERVER
 const app = require("./server");
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`server is started and connected at port ${PORT}`));
+app.listen(PORT, () => console.log(`server is connected at port ${PORT}`));
